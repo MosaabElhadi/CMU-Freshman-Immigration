@@ -1,0 +1,19 @@
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        origX = x
+        x = abs(x)
+        i = len(str(x))-1
+        outputNum = 0
+        while x > 0:
+            outputNum += (x%10)*(10**i)
+            x //= 10
+            i -= 1
+
+        if origX < 0:
+            return -1*outputNum
+        return outputNum
+        
